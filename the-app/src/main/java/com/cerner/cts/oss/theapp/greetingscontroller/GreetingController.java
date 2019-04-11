@@ -30,6 +30,13 @@ public class GreetingController {
         return new Greeting(String.format(template, name));
     }
 
+    //*****training - Spring Boot Web Service Part II *****
+    //Takes value from URL and stores in aName ex /greetings/Brad
+    //returns Hello, Brad!
+    @RequestMapping(method=GET, value = "/greetings/{aName}")
+    public Greeting nameGreeting(@PathVariable String aName){
+        return new Greeting(String.format(template, aName));
+    }
 
 
 }
